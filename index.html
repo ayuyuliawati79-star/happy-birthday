@@ -16,7 +16,7 @@
     overflow-x: hidden;
     text-align: center;
   }
-  .layar { display: none; padding: 40px 20px 60px; max-width: 520px; margin: 0 auto; }
+  .layar { display: none; padding: 40px 20px 60px; max-width: 520px; margin: 0 auto; position: relative; z-index: 1; }
   .layar.aktif { display: block; animation: muncul .6s ease; }
   @keyframes muncul { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 
@@ -36,27 +36,34 @@
   button:active { transform: translateY(4px); box-shadow: 0 2px 0 #d63d72; }
   button.abu { background: #b9a3ad; box-shadow: 0 6px 0 #9a8690; }
 
-  .polaroid {
-    background: #fff; padding: 12px 12px 10px; border-radius: 6px;
-    box-shadow: 0 10px 25px rgba(120,40,70,.25);
-    width: 78%; max-width: 300px; margin: 22px auto;
-  }
-  .polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: 3px; }
-  .polaroid span { display: block; margin-top: 10px; font-family: 'Pacifico', cursive; font-size: .95rem; color: #ff5c93; }
-  .polaroid:nth-child(odd)  { transform: rotate(-3deg); }
-  .polaroid:nth-child(even) { transform: rotate(3deg); }
-
   .kartu {
     background: #fff9fb; border-radius: 22px; padding: 26px 22px; margin: 26px 0 10px;
     text-align: left; line-height: 1.9; white-space: pre-line;
     box-shadow: 0 10px 30px rgba(120,40,70,.15); border: 3px dashed #ffb3cf;
     min-height: 120px;
   }
-  .ttd { font-family: 'Pacifico', cursive; color: #ff5c93; margin-top: 18px; font-size: 1.2rem; }
+  .ttd { font-family: 'Pacifico', cursive; color: #ff5c93; margin-top: 18px; font-size: 1.2rem; opacity: 0; transition: opacity 1s; }
+  .ttd.tampil { opacity: 1; }
+
+  #btnLanjut { display: none; margin-top: 24px; }
+  #btnLanjut.tampil { display: inline-block; animation: muncul .8s ease; }
+  .judulFoto { font-family: 'Pacifico', cursive; color: #ff5c93; font-size: 1.4rem; margin-bottom: 6px; }
+
+  .polaroid {
+    background: #fff; padding: 12px 12px 10px; border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(120,40,70,.25);
+    width: 78%; max-width: 300px; margin: 22px auto;
+    opacity: 0; transform: translateY(30px) scale(.9);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  .polaroid.tampil { opacity: 1; }
+  .polaroid:nth-child(odd).tampil  { transform: rotate(-3deg); }
+  .polaroid:nth-child(even).tampil { transform: rotate(3deg); }
+  .polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: 3px; }
+  .polaroid span { display: block; margin-top: 10px; font-family: 'Pacifico', cursive; font-size: .95rem; color: #ff5c93; }
 
   .melayang { position: fixed; bottom: -40px; pointer-events: none; z-index: 0; animation: naik linear forwards; }
   @keyframes naik { to { transform: translateY(-115vh) rotate(25deg); opacity: .3; } }
-  .layar { position: relative; z-index: 1; }
 </style>
 </head>
 
@@ -79,13 +86,21 @@
   <p class="kecil" id="ledek" style="margin-top:22px"></p>
 </div>
 
-<!-- LAYAR 3: ucapan + foto -->
+<!-- LAYAR 3: kata-kata dulu, baru foto -->
 <div class="layar" id="l3">
   <h1>Selamat Ulang Tahun! 🥳</h1>
-  <div id="foto"></div>
+
   <div class="kartu" id="pesan"></div>
   <p class="ttd" id="ttd"></p>
-  <button onclick="hujan()" style="margin-top:24px">Hujan hati lagi 💗</button>
+
+  <button id="btnLanjut" onclick="ke('l4')">Lanjut, ada foto buat kamu 📸</button>
+</div>
+
+<!-- LAYAR 4: foto-foto (slide terpisah) -->
+<div class="layar" id="l4">
+  <p class="judulFoto" id="judulFoto">Beberapa momen favoritku 📸</p>
+  <div id="foto"></div>
+  <button onclick="hujan()">Hujan hati lagi 💗</button>
 </div>
 
 <script>
@@ -133,9 +148,10 @@ function ke(id) {
   document.getElementById(id).classList.add('aktif');
   window.scrollTo(0, 0);
   if (id === 'l3') ketik();
+  if (id === 'l4') tampilkanFoto();
 }
 
-// efek mengetik
+// efek mengetik, setelah selesai muncul tombol lanjut ke slide foto
 let timer;
 function ketik() {
   const el = document.getElementById('pesan');
@@ -143,8 +159,21 @@ function ketik() {
   el.textContent = ""; let i = 0;
   timer = setInterval(() => {
     el.textContent += PESAN[i++];
-    if (i >= PESAN.length) clearInterval(timer);
+    if (i >= PESAN.length) {
+      clearInterval(timer);
+      document.getElementById('ttd').classList.add('tampil');
+      setTimeout(() => document.getElementById('btnLanjut').classList.add('tampil'), 1200);
+    }
   }, 40);
+}
+
+function tampilkanFoto() {
+  const fotos = document.querySelectorAll('.polaroid');
+  if (fotos.length === 0) document.getElementById('judulFoto').style.display = 'none';
+  fotos.forEach((p, idx) => {
+    setTimeout(() => p.classList.add('tampil'), 400 + idx * 900);
+  });
+  hujan();
 }
 
 // hujan emoji
