@@ -3,10 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Selamat Ulang Tahun!</title>
+  <title>Selamat Ulang Tahun! 🎂</title>
+
+  <style>
+    body {
+      font-family: Georgia, serif;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(160deg, #fff0f5, #ffc2d8);
+      color: #4a2a38;
+      line-height: 1.8;
+    }
+    h1 { color: #ff6b9d; font-size: 2rem; }
+    .kue { font-size: 4rem; }
+    img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.2);
+      margin: 20px 0;
+    }
+    button {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 999px;
+      background: #ff6b9d;
+      color: white;
+      font-size: 1.05rem;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(255,107,157,.45);
+    }
+    #pesan {
+      display: none;
+      max-width: 500px;
+      margin: 24px auto 0;
+      padding: 24px;
+      background: #fff5f8;
+      border-radius: 20px;
+      text-align: left;
+      box-shadow: 0 10px 30px rgba(120,40,70,.15);
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Happy Birthday, Sayang! 🎂</h1>
-  <p>Ini ucapan dari aku buat kamu.</p>
+  <div class="kue">🎂</div>
+
+  <!-- GANTI nama di bawah ini -->
+  <h1>Happy Birthday, Sayang!</h1>
+  <p>Ada sesuatu kecil buat kamu hari ini...</p>
+
+  <!-- GANTI foto1.jpg dengan nama fotomu (hapus baris ini kalau belum ada foto) -->
+  <img src="foto1.jpg" alt="Foto kita">
+
+  <br>
+  <button onclick="buka()">Buka hadiahnya 🎁</button>
+
+  <!-- GANTI isi pesan sesuai ucapanmu -->
+  <div id="pesan">
+    <p>Selamat ulang tahun, sayang! 🎉</p>
+    <p>Terima kasih sudah selalu ada buat aku. Aku bersyukur banget bisa kenal kamu.</p>
+    <p>Semoga semua doa dan impianmu terwujud, dan kamu selalu sehat dan bahagia.</p>
+    <p>I love you, lebih dari kemarin. ❤️</p>
+    <p style="text-align:right; color:#ff6b9d;"><i>— dari aku 💕</i></p>
+  </div>
+
+  <script>
+    function buka() {
+      document.getElementById('pesan').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
