@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Happy Birthday! 🎂</title>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     min-height: 100vh;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: #5a3347;
     background: linear-gradient(160deg, #fff0f6, #ffd9e8 55%, #ffc4dc);
     overflow-x: hidden;
@@ -20,8 +20,8 @@
   .layar.aktif { display: block; animation: muncul .6s ease; }
   @keyframes muncul { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 
-  h1 { font-family: 'Pacifico', cursive; color: #ff5c93; font-size: 2.3rem; line-height: 1.3; margin: 12px 0; }
-  h2 { font-family: 'Pacifico', cursive; color: #ff5c93; font-size: 1.6rem; margin-bottom: 20px; }
+  h1 { font-family: 'Dancing Script', cursive; font-weight: 600; color: #ff5c93; font-size: 2.8rem; line-height: 1.2; margin: 12px 0; }
+  h2 { font-family: 'Dancing Script', cursive; font-weight: 600; color: #ff5c93; font-size: 2.1rem; line-height: 1.25; margin-bottom: 20px; }
   .besar { font-size: 5.5rem; animation: lompat 1.6s infinite; display: inline-block; }
   @keyframes lompat { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-16px) rotate(4deg); } }
   p.kecil { font-size: 1.05rem; margin-bottom: 26px; opacity: .85; }
@@ -42,12 +42,12 @@
     box-shadow: 0 10px 30px rgba(120,40,70,.15); border: 3px dashed #ffb3cf;
     min-height: 120px;
   }
-  .ttd { font-family: 'Pacifico', cursive; color: #ff5c93; margin-top: 18px; font-size: 1.2rem; opacity: 0; transition: opacity 1s; }
+  .ttd { font-family: 'Dancing Script', cursive; font-weight: 600; color: #ff5c93; margin-top: 18px; font-size: 1.6rem; opacity: 0; transition: opacity 1s; }
   .ttd.tampil { opacity: 1; }
 
   #btnLanjut { display: none; margin-top: 24px; }
   #btnLanjut.tampil { display: inline-block; animation: muncul .8s ease; }
-  .judulFoto { font-family: 'Pacifico', cursive; color: #ff5c93; font-size: 1.4rem; margin-bottom: 6px; }
+  .judulFoto { font-family: 'Dancing Script', cursive; font-weight: 600; color: #ff5c93; font-size: 1.9rem; margin-bottom: 6px; }
 
   .polaroid {
     background: #fff; padding: 12px 12px 10px; border-radius: 6px;
@@ -60,7 +60,7 @@
   .polaroid:nth-child(odd).tampil  { transform: rotate(-3deg); }
   .polaroid:nth-child(even).tampil { transform: rotate(3deg); }
   .polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: 3px; }
-  .polaroid span { display: block; margin-top: 10px; font-family: 'Pacifico', cursive; font-size: .95rem; color: #ff5c93; }
+  .polaroid span { display: block; margin-top: 10px; font-family: 'Dancing Script', cursive; font-weight: 600; font-size: 1.25rem; color: #ff5c93; }
 
   .melayang { position: fixed; bottom: -40px; pointer-events: none; z-index: 0; animation: naik linear forwards; }
   @keyframes naik { to { transform: translateY(-115vh) rotate(25deg); opacity: .3; } }
