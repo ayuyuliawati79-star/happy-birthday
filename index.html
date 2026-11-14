@@ -1,15 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, My Love! 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     min-height: 100vh;
     font-family: 'Nunito', sans-serif;
-    color: #87445f;
-    background: linear-gradient(160deg, #fff0f5, #ffd9e8 55%, #ffc4dc);
+    color: #2d4a6b;
+    background: linear-gradient(160deg, #f0f8ff, #d9ecff 55%, #c4e0ff);
     overflow-x: hidden;
     text-align: center;
 }
 
+.layar {
+    display: none;
+    padding: 50px 20px 60px;
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.layar.aktif {
+    display: block;
+    animation: muncul .6s ease;
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 h1, h2 {
     font-family: 'Dancing Script', cursive;
-    color: #d45d91;
+    color: #3b8eea;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin: 12px 0;
+}
+
+h2 {
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+}
+
+.besar {
+    font-size: 5.5rem;
+    animation: lompat 1.6s infinite;
+    display: inline-block;
+}
+
+@keyframes lompat {
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+    50% {
+        transform: translateY(-16px) rotate(4deg);
+    }
+}
+
+p.kecil {
+    font-size: 1.05rem;
+    margin-bottom: 26px;
+    opacity: .85;
+    line-height: 1.8;
 }
 
 button {
@@ -20,26 +94,26 @@ button {
     margin: 6px;
     border: none;
     border-radius: 999px;
-    background: #e879a7;
+    background: #3b8eea;
     color: white;
     cursor: pointer;
-    box-shadow: 0 6px 0 #c65383,
-                0 10px 20px rgba(217,108,155,.35);
+    box-shadow: 0 6px 0 #2a6fc4,
+                0 10px 20px rgba(59,142,234,.35);
     transition: .2s;
 }
 
 button:active {
     transform: translateY(4px);
-    box-shadow: 0 2px 0 #c65383;
+    box-shadow: 0 2px 0 #2a6fc4;
 }
 
 button.abu {
-    background: #c5a5b4;
-    box-shadow: 0 6px 0 #a98496;
+    background: #a3b3c2;
+    box-shadow: 0 6px 0 #8596a6;
 }
 
 .kartu {
-    background: #fffafd;
+    background: #f9fcff;
     border-radius: 22px;
     padding: 26px 22px;
     margin: 26px 0 10px;
@@ -47,18 +121,70 @@ button.abu {
     line-height: 1.9;
     white-space: pre-line;
     font-size: 1.02rem;
-    box-shadow: 0 10px 30px rgba(120,50,80,.15);
-    border: 3px dashed #f2a9c6;
+    box-shadow: 0 10px 30px rgba(30,70,120,.15);
+    border: 3px dashed #a9d0ff;
     min-height: 120px;
+    overflow-wrap: break-word;
 }
 
 .ttd {
     font-family: 'Dancing Script', cursive;
-    color: #d45d91;
+    color: #3b8eea;
     margin-top: 18px;
     font-size: 1.6rem;
     opacity: 0;
     transition: opacity 1s;
+}
+
+.ttd.tampil {
+    opacity: 1;
+}
+
+#btnLanjut {
+    display: none;
+    margin-top: 24px;
+}
+
+#btnLanjut.tampil {
+    display: inline-block;
+    animation: muncul .8s ease;
+}
+
+.judulFoto {
+    font-family: 'Dancing Script', cursive;
+    color: #3b8eea;
+    font-size: 1.9rem;
+    margin-bottom: 6px;
+}
+
+.polaroid {
+    background: white;
+    padding: 12px 12px 10px;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(30,70,120,.25);
+    width: 78%;
+    max-width: 300px;
+    margin: 22px auto;
+    opacity: 0;
+    transform: translateY(30px) scale(.9);
+    transition: opacity .8s, transform .8s;
+}
+
+.polaroid.tampil {
+    opacity: 1;
+    transform: rotate(-2deg);
+}
+
+.polaroid:nth-child(even).tampil {
+    transform: rotate(3deg);
+}
+
+.polaroid img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 3px;
 }
 
 .polaroid span {
@@ -66,7 +192,7 @@ button.abu {
     margin-top: 10px;
     font-family: 'Dancing Script', cursive;
     font-size: 1.25rem;
-    color: #d45d91;
+    color: #3b8eea;
 }
 
 .melayang {
@@ -76,3 +202,397 @@ button.abu {
     z-index: 0;
     animation: naik linear forwards;
 }
+
+@keyframes naik {
+    to {
+        transform: translateY(-115vh) rotate(25deg);
+        opacity: .3;
+    }
+}
+
+#nggak {
+    transition: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="musik" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SLIDE 1: PEMBUKA -->
+<div class="layar aktif" id="l1">
+
+    <div class="besar">🎂</div>
+
+    <h1 id="judul"></h1>
+
+    <p class="kecil" id="pembuka"></p>
+
+    <button onclick="ke('l2')">
+        Klik aku dong 💌
+    </button>
+
+</div>
+
+
+<!-- SLIDE 2: PERTANYAAN -->
+<div class="layar" id="l2">
+
+    <div class="besar">🧸</div>
+
+    <h2 id="tanya"></h2>
+
+    <button onclick="ke('l3'); hujan();">
+        Tau dong! 🎉
+    </button>
+
+    <button class="abu" id="nggak">
+        Nggak tau
+    </button>
+
+    <p class="kecil" id="ledek" style="margin-top:22px"></p>
+
+</div>
+
+
+<!-- SLIDE 3: UCAPAN -->
+<div class="layar" id="l3">
+
+    <div class="besar">💙</div>
+
+    <h1>Happy 20th Birthday!</h1>
+
+    <p class="kecil">19 December 2006 🎂</p>
+
+    <div class="kartu" id="pesan"
+         onclick="akhiriKetik()"></div>
+
+    <p class="ttd" id="ttd"></p>
+
+    <button id="btnLanjut" onclick="ke('l4')">
+        Lanjut, ada foto buat kamu 📸
+    </button>
+
+</div>
+
+
+<!-- SLIDE 4: FOTO KENANGAN -->
+<div class="layar" id="l4">
+
+    <div class="besar">📸</div>
+
+    <p class="judulFoto" id="judulFoto">
+        Our Favorite Memories 💙
+    </p>
+
+    <p class="kecil">
+        Beberapa momen yang ingin selalu aku ingat.
+    </p>
+
+    <div id="foto"></div>
+
+    <button onclick="hujan()">
+        Hujan hati lagi 💙
+    </button>
+
+    <h2 style="margin-top:35px;">
+        I Love You! 💙
+    </h2>
+
+    <p class="kecil">
+        Happy birthday, my favorite person.
+        <br>
+        With love, always.
+    </p>
+
+</div>
+
+
+<script>
+
+/* =====================================
+   EDIT BAGIAN INI SESUAI KEINGINANMU
+===================================== */
+
+const NAMA = "Sayang";
+const DARI = "Aku";
+
+const PEMBUKA =
+"Ada kejutan kecil buat kamu, jangan dilewatin ya 🥺";
+
+const PERTANYAAN =
+"Kamu tau gak hari ini hari apa?";
+
+const JUDUL_FOTO =
+"Beberapa momen favoritku 📸";
+
+const KECEPATAN = 20;
+
+// Musik opsional
+const MUSIK = "";
+
+// Foto
+const FOTO = [
+    { file: "foto1.jpg", caption: "Gantengnya pacarkuuu 🥰" },
+    { file: "foto2.jpg", caption: "Favoritku sedunia 💙" },
+    { file: "foto3.jpg", caption: "Gemes bgt 🧸" }
+];
+
+// SURAT ULANG TAHUN
+const PESAN =
+`Selamat ulang tahun yang ke-20, ${NAMA}! 🤍
+
+Hari ini adalah hari spesial buat kamu, jadi aku mau nulis sesuatu yang agak panjang. Bukan karena aku lagi mau puitis, tapi karena kalau cuma tulis "happy birthday", rasanya nggak cukup buat nyampein semua yang ada di hati aku.
+
+Terima kasih ya, sudah lahir ke dunia ini. Karena kalau kamu nggak ada, aku nggak tahu hidup aku bakal seperti apa. Mungkin tetap jalan, tapi pasti nggak sehangat dan senyaman sekarang. Kamu itu salah satu hal terbaik yang pernah terjadi di hidup aku.
+
+Aku sering memperhatikan hal-hal kecil dari kamu. Cara kamu ketawa waktu hal receh terasa lucu banget. Cara kamu diam-diam peduli walaupun nggak selalu bilang. Cara kamu bikin aku merasa nyaman. Kamu mungkin nggak sadar, tapi hal-hal kecil itu yang bikin aku jatuh cinta berkali-kali.
+
+Terima kasih sudah sabar menghadapi aku. Aku tahu aku nggak selalu mudah. Kadang overthinking, kadang ngambek, kadang minta dimengerti padahal nggak ngomong apa-apa. Tapi kamu tetap menjadi seseorang yang berarti buat aku.
+
+Di umur yang baru ini, aku berdoa semoga kamu selalu sehat, rezekinya lancar, dan semua usaha kamu dibalas dengan hasil yang lebih baik dari yang kamu bayangkan. Semoga cita-cita kamu satu per satu terwujud, semoga hari-hari kamu lebih banyak tawa daripada lelah, dan semoga kamu selalu dikelilingi orang-orang yang tulus sayang sama kamu.
+
+Kalau suatu hari kamu capek, ingat ya, kamu nggak sendirian. Ada aku yang siap jadi tempat cerita dan berbagi banyak hal.
+
+Aku nggak janji bisa jadi pasangan yang sempurna, tapi aku akan terus berusaha jadi yang terbaik buat kamu. Aku mau terus nemenin kamu, di masa senang, masa susah, dan semua yang ada di antaranya.
+
+Sekali lagi, happy birthday, sayang. Selamat datang di usia 20 tahun. Semoga tahun ini jadi tahun yang baik buat kamu dan buat kita.
+
+I love you, today, tomorrow, and always. 💙`;
+
+
+/* =====================================
+   BAGIAN SISTEM WEBSITE
+===================================== */
+
+document.getElementById("judul").textContent =
+    `Happy Birthday, ${NAMA}!`;
+
+document.getElementById("pembuka").textContent = PEMBUKA;
+
+document.getElementById("tanya").textContent = PERTANYAAN;
+
+document.getElementById("judulFoto").textContent = JUDUL_FOTO;
+
+document.getElementById("ttd").textContent = `— dari ${DARI} 💙`;
+
+document.title = `Happy Birthday, ${NAMA}! 🎂`;
+
+// MUSIK
+let lagu = null;
+
+if (MUSIK) {
+    lagu = new Audio(MUSIK);
+    lagu.loop = true;
+    lagu.volume = 0.6;
+}
+
+function mulaiLagu() {
+    if (lagu) {
+        lagu.play().catch(() => {});
+    }
+}
+
+// FOTO
+FOTO.forEach(f => {
+    const d = document.createElement("div");
+
+    d.className = "polaroid";
+
+    const img = document.createElement("img");
+    img.src = f.file;
+    img.alt = f.caption;
+
+    img.onerror = () => d.remove();
+
+    const caption = document.createElement("span");
+    caption.textContent = f.caption;
+
+    d.appendChild(img);
+    d.appendChild(caption);
+
+    document.getElementById("foto").appendChild(d);
+});
+
+// PINDAH SLIDE
+function ke(id) {
+
+    document.querySelectorAll(".layar").forEach(l => {
+        l.classList.remove("aktif");
+    });
+
+    document.getElementById(id).classList.add("aktif");
+
+    window.scrollTo(0, 0);
+
+    if (id === "l2") mulaiLagu();
+
+    if (id === "l3") ketik();
+
+    if (id === "l4") tampilkanFoto();
+}
+
+// EFEK MENGETIK
+let timer;
+let selesai = false;
+
+function ketik() {
+
+    const el = document.getElementById("pesan");
+
+    clearInterval(timer);
+
+    el.textContent = "";
+
+    selesai = false;
+
+    let i = 0;
+
+    timer = setInterval(() => {
+
+        el.textContent += PESAN[i];
+
+        i++;
+
+        if (i >= PESAN.length) {
+            akhiriKetik();
+        }
+
+    }, KECEPATAN);
+}
+
+function akhiriKetik() {
+
+    if (selesai) return;
+
+    selesai = true;
+
+    clearInterval(timer);
+
+    document.getElementById("pesan").textContent = PESAN;
+
+    document.getElementById("ttd").classList.add("tampil");
+
+    setTimeout(() => {
+        document.getElementById("btnLanjut")
+            .classList.add("tampil");
+    }, 800);
+}
+
+// TAMPILKAN FOTO
+function tampilkanFoto() {
+
+    const fotos = document.querySelectorAll(".polaroid");
+
+    fotos.forEach((p, idx) => {
+
+        setTimeout(() => {
+            p.classList.add("tampil");
+        }, 400 + idx * 900);
+
+    });
+
+    hujan();
+}
+
+// HUJAN EMOJI
+function hujan() {
+
+    const ikon = ["💙", "🦋", "💎", "🎈", "✨", "💫", "🧸"];
+
+    for (let i = 0; i < 40; i++) {
+
+        setTimeout(() => {
+
+            const e = document.createElement("div");
+
+            e.className = "melayang";
+
+            e.textContent = ikon[
+                Math.floor(Math.random() * ikon.length)
+            ];
+
+            e.style.left = Math.random() * 100 + "vw";
+
+            e.style.fontSize =
+                (18 + Math.random() * 24) + "px";
+
+            e.style.animationDuration =
+                (4 + Math.random() * 4) + "s";
+
+            document.body.appendChild(e);
+
+            setTimeout(() => e.remove(), 8500);
+
+        }, i * 110);
+    }
+}
+
+// TOMBOL NGGAK TAU KABUR
+const ledekan = [
+    "Eits, nggak bisa kepencet 😝",
+    "Coba lagi deh 🙈",
+    "Masa lupa sih? 🥺",
+    "Udah, pencet yang biru aja 💙",
+    "Hari spesial siapa coba? 😭"
+];
+
+let kali = 0;
+
+const nggak = document.getElementById("nggak");
+
+function kabur(e) {
+
+    e.preventDefault();
+
+    nggak.style.position = "fixed";
+
+    nggak.style.left =
+        Math.random() * (innerWidth - nggak.offsetWidth - 20) + 10 + "px";
+
+    nggak.style.top =
+        Math.random() * (innerHeight - nggak.offsetHeight - 20) + 10 + "px";
+
+    document.getElementById("ledek").textContent =
+        ledekan[kali++ % ledekan.length];
+}
+
+nggak.addEventListener("mouseover", kabur);
+nggak.addEventListener("touchstart", kabur);
+nggak.addEventListener("click", kabur);
+
+// ANIMASI LATAR
+setInterval(() => {
+
+    const h = document.createElement("div");
+
+    h.className = "melayang";
+
+    h.textContent = ["💙", "🦋", "💎"][
+        Math.floor(Math.random() * 3)
+    ];
+
+    h.style.left = Math.random() * 100 + "vw";
+
+    h.style.fontSize =
+        (14 + Math.random() * 14) + "px";
+
+    h.style.animationDuration =
+        (8 + Math.random() * 6) + "s";
+
+    h.style.opacity = .6;
+
+    document.body.appendChild(h);
+
+    setTimeout(() => h.remove(), 15000);
+
+}, 1200);
+
+</script>
+
+</body>
+</html>
