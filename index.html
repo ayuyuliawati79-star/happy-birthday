@@ -73,51 +73,63 @@
 <div class="layar aktif" id="l1">
   <div class="besar">🎂</div>
   <h1 id="judul"></h1>
-  <p class="kecil">Ada kejutan kecil buat kamu, jangan dilewatin ya 🥺</p>
+  <p class="kecil" id="pembuka"></p>
   <button onclick="ke('l2')">Klik aku dong 💌</button>
 </div>
 
 <!-- LAYAR 2: pertanyaan lucu -->
 <div class="layar" id="l2">
   <div class="besar">🧸</div>
-  <h2>Kamu tau gak hari ini hari apa?</h2>
+  <h2 id="tanya"></h2>
   <button onclick="ke('l3'); hujan();">Tau dong! 🎉</button>
   <button class="abu" id="nggak">Nggak tau</button>
   <p class="kecil" id="ledek" style="margin-top:22px"></p>
 </div>
 
-<!-- LAYAR 3: kata-kata dulu, baru foto -->
+<!-- LAYAR 3: kata-kata -->
 <div class="layar" id="l3">
-  <h1>Selamat Ulang Tahun! 🥳</h1>
-
+  <h1>Happy Birthday! 🥳</h1>
   <div class="kartu" id="pesan"></div>
   <p class="ttd" id="ttd"></p>
-
   <button id="btnLanjut" onclick="ke('l4')">Lanjut, ada foto buat kamu 📸</button>
 </div>
 
-<!-- LAYAR 4: foto-foto (slide terpisah) -->
+<!-- LAYAR 4: foto-foto -->
 <div class="layar" id="l4">
-  <p class="judulFoto" id="judulFoto">Beberapa momen favoritku 📸</p>
+  <p class="judulFoto" id="judulFoto"></p>
   <div id="foto"></div>
   <button onclick="hujan()">Hujan hati lagi 💗</button>
 </div>
 
 <script>
-/* ================= EDIT BAGIAN INI ================= */
-const NAMA  = "Sayang";   // nama pacarmu
-const DARI  = "Aku";      // namamu
+/* =====================================================
+   EDIT BAGIAN INI SAJA. Yang di bawahnya jangan diubah.
+   Ubah tulisan di antara tanda kutip " " atau ` `
+   ===================================================== */
 
-// Foto: tulis nama file yang kamu upload ke GitHub + caption lucunya.
-// Hapus baris yang tidak dipakai. Kosongkan [] kalau tidak ada foto.
+const NAMA  = "Sayang";    // nama atau panggilan pacarmu
+const DARI  = "si imup";       // namamu
+
+const PEMBUKA   = "Ada kejutan kecil buat kamu, jangan dilewatin ya 🥺";  // tulisan di halaman pertama
+const PERTANYAAN = "Kamu tau gak hari ini hari apa?";                      // pertanyaan di halaman kedua
+const JUDUL_FOTO = "Beberapa momen favoritku 📸";                          // judul di halaman foto
+
+// Lagu latar (opsional). Upload file mp3 ke GitHub lalu tulis namanya di sini.
+// Contoh: "aboutyou.mp3". Kosongkan "" kalau tidak mau pakai lagu.
+const MUSIK = "";
+
+// Foto: nama file harus SAMA PERSIS dengan yang di-upload ke GitHub.
+// Hapus baris yang tidak dipakai, atau tambah baris baru (jangan lupa koma di ujung, kecuali baris terakhir).
 const FOTO = [
-  { file: "foto1.jpg", caption: "Cantik banget sih 🥰" },
+  { file: "foto1.jpg", caption: "Ganteng banget sih 🥰" },
   { file: "foto2.jpg", caption: "Favoritku sedunia 💕" },
   { file: "foto3.jpg", caption: "Gemes bgt 🧸" }
 ];
 
+// Ucapanmu. Tulis di antara tanda ` ` (backtick). Jangan hapus tanda itu.
+// ${NAMA} akan otomatis berubah jadi nama di atas.
 const PESAN =
-`Selamat ulang tahun, ${NAMA}! 🎂
+`Happy Birthday , ${Sayang}! 🎂
 
 Makasih ya udah jadi orang yang paling bikin aku senyum-senyum sendiri.
 Kamu itu lucu, baik, dan kadang ngegemesin banget. 🥺
@@ -127,11 +139,27 @@ Semoga semua mimpimu pelan-pelan jadi nyata,
 dan semoga aku boleh terus ada di sampingmu. 💖
 
 I love you, lebih dari kemarin, kurang dari besok! ❤️`;
-/* =================================================== */
 
-document.getElementById('judul').textContent = `Happy Birthday, ${NAMA}!`;
-document.getElementById('ttd').textContent = `— dari ${DARI} 💕`;
-document.title = `Happy Birthday, ${NAMA}! 🎂`;
+/* ================= BATAS EDIT ================= */
+
+
+document.getElementById('judul').textContent = `Happy Birthday, ${Sayang}!`;
+document.getElementById('pembuka').textContent = PEMBUKA;
+document.getElementById('tanya').textContent = PERTANYAAN;
+document.getElementById('judulFoto').textContent = JUDUL_FOTO;
+document.getElementById('ttd').textContent = `— dari ${imup} 💕`;
+document.title = `Happy Birthday, ${Sayang}! 🎂`;
+
+// lagu latar
+let lagu = null;
+if (MUSIK) {
+  lagu = new Audio(MUSIK);
+  lagu.loop = true;
+  lagu.volume = 0.6;
+}
+function mulaiLagu() {
+  if (lagu) lagu.play().catch(() => {});
+}
 
 // pasang foto polaroid (kalau file tidak ada, otomatis disembunyikan)
 FOTO.forEach(f => {
@@ -147,6 +175,7 @@ function ke(id) {
   document.querySelectorAll('.layar').forEach(l => l.classList.remove('aktif'));
   document.getElementById(id).classList.add('aktif');
   window.scrollTo(0, 0);
+  if (id === 'l2') mulaiLagu();
   if (id === 'l3') ketik();
   if (id === 'l4') tampilkanFoto();
 }
