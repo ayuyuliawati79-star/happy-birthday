@@ -2,263 +2,519 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday My Love ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>Happy 20th Birthday, My Love ❤️</title>
 
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #1a0010, #4d1933, #800040);
-            color: white;
-            text-align: center;
-            overflow-x: hidden;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        .container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 30px 20px;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        h1 {
-            font-size: 42px;
-            color: #ffb6d5;
-            margin-bottom: 20px;
-            text-shadow: 0 0 15px pink;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        h2 {
-            color: #ffcce0;
-            margin-bottom: 15px;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff0f5;
+    color: #87445f;
+    overflow-x: hidden;
+}
 
-        p {
-            font-size: 17px;
-            line-height: 1.8;
-            max-width: 600px;
-        }
+section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-        .heart {
-            font-size: 70px;
-            animation: beat 1s infinite;
-            margin: 20px;
-        }
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
 
-        @keyframes beat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
+h1 {
+    font-size: clamp(36px, 7vw, 60px);
+    color: #c65383;
+}
 
-        button {
-            background: #ff80b5;
-            color: white;
-            border: none;
-            padding: 13px 28px;
-            border-radius: 30px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 25px;
-            transition: 0.3s;
-        }
+h2 {
+    color: #c65383;
+    margin-bottom: 15px;
+}
 
-        button:hover {
-            background: #ff4d94;
-            transform: scale(1.08);
-        }
+p {
+    font-size: 14px;
+    line-height: 2;
+}
 
-        .card {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 650px;
-            margin: 20px auto;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(255,182,213,0.2);
-        }
+button {
+    background: #d96c9b;
+    color: white;
+    border: none;
+    padding: 13px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 25px;
+    transition: .3s;
+}
 
-        .hidden {
-            display: none;
-        }
+button:hover {
+    background: #b94d7d;
+    transform: scale(1.05);
+}
 
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
+.hero {
+    background: linear-gradient(135deg, #fff0f5, #ffc4dc, #ffe8f1);
+}
 
-        .gallery img {
-            width: 180px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 15px;
-            border: 3px solid pink;
-        }
+.subtitle {
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
 
-        .floating {
-            position: fixed;
-            bottom: -20px;
-            animation: floatUp 6s linear infinite;
-            pointer-events: none;
-            z-index: 10;
-        }
+.hero p {
+    max-width: 500px;
+    margin-top: 20px;
+}
 
-        @keyframes floatUp {
-            from {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateY(-110vh);
-                opacity: 0;
-            }
-        }
+.heart {
+    font-size: 65px;
+    margin: 20px;
+    animation: heartbeat 1.2s infinite;
+}
 
-        footer {
-            padding: 25px;
-            color: #ffcce0;
-        }
-    </style>
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.card {
+    max-width: 600px;
+    width: 100%;
+    background: rgba(255,255,255,.75);
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px #d96c9b22;
+    border: 1px solid white;
+}
+
+.envelope {
+    width: 230px;
+    height: 150px;
+    background: #e99ab9;
+    margin: 50px auto;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px #b94d7d33;
+}
+
+.envelope:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 115px solid transparent;
+    border-right: 115px solid transparent;
+    border-top: 90px solid #d96c9b;
+    transform-origin: top;
+    transition: .5s;
+    z-index: 2;
+}
+
+.envelope.open:before {
+    transform: rotateX(180deg);
+}
+
+.envelope:after {
+    content: "💌";
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    font-size: 45px;
+    z-index: 3;
+}
+
+.letter {
+    display: none;
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    line-height: 2;
+    box-shadow: 0 10px 30px #d96c9b22;
+}
+
+.letter.show {
+    display: block;
+    animation: appear .8s;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    max-width: 750px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.reason {
+    background: white;
+    padding: 25px 15px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px #d96c9b22;
+}
+
+.reason span {
+    font-size: 35px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    max-width: 750px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 5px solid white;
+    box-shadow: 0 5px 20px #d96c9b33;
+}
+
+.final {
+    background: linear-gradient(135deg, #e99ab9, #c65383);
+    color: white;
+}
+
+.final h1,
+.final h2 {
+    color: white;
+}
+
+.final .card {
+    background: #ffffff22;
+    border: 1px solid #ffffff55;
+    color: white;
+}
+
+.floating {
+    position: fixed;
+    bottom: -30px;
+    animation: floatUp 7s linear forwards;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    background: #c65383;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+}
+
+@media(max-width: 500px) {
+    .card {
+        padding: 25px 18px;
+    }
+
+    .gallery img {
+        height: 180px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <section class="container">
-        <div class="heart">❤️</div>
+<!-- MUSIK -->
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-        <h1>Happy Birthday!</h1>
+<!-- HALAMAN DEPAN -->
+<section class="hero">
 
-        <h2>To My Favorite Person</h2>
+    <div class="subtitle">19 DECEMBER 2006</div>
 
-        <p>
-            Hari ini adalah hari spesial untuk seseorang
-            yang sangat berarti dalam hidupku.
-        </p>
+    <div class="heart">💗</div>
 
-        <button onclick="showSurprise()">
-            Open Your Surprise 💌
-        </button>
+    <h1>Happy 20th Birthday!</h1>
 
-        <div id="surprise" class="hidden card">
-            <h2>Happy Birthday, My Love! 🎂</h2>
+    <h2>To My Favorite Boy</h2>
 
-            <p>
-                Selamat ulang tahun, sayangku.
-                Semoga semua hal baik selalu datang
-                dalam hidupmu. Semoga kamu selalu sehat,
-                bahagia, panjang umur, dan semua impianmu
-                bisa tercapai.
-                <br><br>
-                Terima kasih sudah hadir dalam hidupku.
-                Terima kasih sudah menjadi bagian dari
-                hari-hariku.
-                <br><br>
-                Aku mungkin tidak bisa memberikan
-                segalanya, tetapi aku akan selalu berusaha
-                memberikan kasih sayang terbaik untukmu.
-                <br><br>
-                I love you, always and forever. ❤️
-            </p>
-        </div>
-    </section>
+    <p>
+        Today is the day someone special was born.
+        And I'm so lucky to have you in my life.
+        <br><br>
+        20 years of your beautiful existence.
+        Here's to more happiness, love, and memories.
+    </p>
 
-    <section class="container">
-        <h1>Reasons Why I Love You ❤️</h1>
+    <button onclick="startWebsite()">
+        Open Your Surprise ♡
+    </button>
 
-        <div class="card">
-            <p>
-                💗 Karena kamu selalu menjadi dirimu sendiri.
-                <br>
-                💗 Karena senyummu bisa membuat hariku lebih baik.
-                <br>
-                💗 Karena kamu membuatku merasa dicintai.
-                <br>
-                💗 Karena bersamamu, hal sederhana terasa istimewa.
-                <br>
-                💗 Karena kamu adalah seseorang yang ingin terus aku perjuangkan.
-            </p>
-        </div>
-    </section>
+</section>
 
-    <section class="container">
-        <h1>Our Memories 📸</h1>
+<!-- SURAT CINTA -->
+<section id="letterSection">
+
+    <h1>A Little Letter For You</h1>
+
+    <p>There is something I want to tell you...</p>
+
+    <div class="envelope"
+         id="envelope"
+         onclick="openLetter()">
+    </div>
+
+    <p>Click the envelope to open your letter 💌</p>
+
+    <div class="letter" id="letter">
+
+        <h2>Dear My Love, ❤️</h2>
 
         <p>
-            Beberapa kenangan yang ingin selalu aku ingat.
+            Happy 20th birthday, sayangku!
+            <br><br>
+
+            Hari ini adalah hari spesial karena
+            seseorang yang sangat berarti bagiku
+            bertambah usia.
+            <br><br>
+
+            Aku berharap kamu selalu diberikan
+            kesehatan, kebahagiaan, umur panjang,
+            dan segala hal baik yang kamu impikan
+            bisa menjadi kenyataan.
+            <br><br>
+
+            Terima kasih sudah hadir dalam hidupku.
+            Terima kasih untuk setiap tawa,
+            cerita, perhatian, dan kenangan yang
+            sudah kita lewati bersama.
+            <br><br>
+
+            Aku memang tidak bisa menjanjikan
+            semuanya akan selalu mudah, tetapi
+            aku berharap kita bisa terus saling
+            memahami, menjaga, dan menemani.
+            <br><br>
+
+            I love you more than words can say.
+            <br><br>
+
+            With all my love,
+            <br>
+            Your Favorite Girl. 💗
         </p>
 
-        <div class="gallery">
-            <img src="foto1.jpg" alt="Kenangan 1">
-            <img src="foto2.jpg" alt="Kenangan 2">
-            <img src="foto3.jpg" alt="Kenangan 3">
+    </div>
+</section>
+
+<!-- ALASAN MENCINTAI -->
+<section>
+
+    <h1>Why I Love You</h1>
+
+    <p>There are so many reasons, but here are some of them.</p>
+
+    <div class="reasons">
+
+        <div class="reason">
+            <span>💗</span>
+            <h2>01</h2>
+            <p>Your Smile</p>
+            <p>Senyummu selalu berhasil membuat hariku lebih baik.</p>
         </div>
 
-        <p style="margin-top:20px;">
-            Every moment with you is my favorite memory. ❤️
+        <div class="reason">
+            <span>🫶</span>
+            <h2>02</h2>
+            <p>Your Heart</p>
+            <p>Karena kamu punya cara tersendiri untuk membuatku nyaman.</p>
+        </div>
+
+        <div class="reason">
+            <span>🌷</span>
+            <h2>03</h2>
+            <p>Your Presence</p>
+            <p>Hal sederhana terasa istimewa ketika bersamamu.</p>
+        </div>
+
+        <div class="reason">
+            <span>❤️</span>
+            <h2>04</h2>
+            <p>Just You</p>
+            <p>Karena kamu adalah kamu, dan itu sudah cukup.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALERI FOTO -->
+<section>
+
+    <h1>Our Memories</h1>
+
+    <p>A little collection of our favorite moments. 📸</p>
+
+    <div class="gallery">
+
+        <img src="foto1.jpg" alt="Memory 1">
+        <img src="foto2.jpg" alt="Memory 2">
+        <img src="foto3.jpg" alt="Memory 3">
+
+    </div>
+
+    <p style="margin-top:25px;">
+        Every picture has a story, and every story has you. 💕
+    </p>
+
+</section>
+
+<!-- PESAN TERAKHIR -->
+<section class="final">
+
+    <div class="heart">🎂</div>
+
+    <h1>Happy Birthday, Love!</h1>
+
+    <div class="card">
+
+        <h2>My Wish For You</h2>
+
+        <p>
+            Semoga di usia barumu ini,
+            kamu semakin dewasa, semakin kuat,
+            dan semakin dekat dengan semua impianmu.
+            <br><br>
+
+            Jangan lupa bahagia, jangan terlalu
+            keras pada dirimu sendiri, dan selalu
+            ingat bahwa ada seseorang yang
+            bangga padamu.
+            <br><br>
+
+            I hope I can celebrate many more
+            birthdays with you.
+            <br><br>
+
+            I love you, today, tomorrow,
+            and always. ❤️
         </p>
-    </section>
 
-    <section class="container">
-        <div class="card">
-            <div class="heart">🎂</div>
+    </div>
 
-            <h1>Once Again, Happy Birthday!</h1>
+    <button onclick="secretMessage()">
+        One Last Surprise 💌
+    </button>
 
-            <p>
-                Semoga tahun ini menjadi tahun terbaikmu.
-                Jangan pernah berhenti bermimpi dan
-                jangan pernah merasa sendirian.
-                <br><br>
-                I'll always be cheering for you.
-                <br><br>
-                With love,
-                <br>
-                Your Favorite Girl ❤️
-            </p>
-        </div>
-    </section>
+    <p id="secret" style="margin-top:25px;"></p>
 
-    <footer>
-        Made with love, just for you ❤️
-    </footer>
+</section>
 
-    <script>
-        function showSurprise() {
-            document.getElementById("surprise")
-                .classList.remove("hidden");
-        }
+<footer>
+    Made with endless love ♡ Just for you.
+</footer>
 
-        function createHeart() {
-            const heart = document.createElement("div");
+<script>
 
-            heart.className = "floating";
-            heart.innerHTML = "❤️";
+// MEMULAI WEBSITE DAN MUSIK
+function startWebsite() {
 
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.fontSize =
-                (Math.random() * 20 + 15) + "px";
+    const music = document.getElementById("music");
 
-            document.body.appendChild(heart);
+    music.play().catch(() => {});
 
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
-        }
+    document.getElementById("letterSection")
+        .scrollIntoView({ behavior: "smooth" });
 
-        setInterval(createHeart, 500);
-    </script>
+}
+
+// MEMBUKA AMPLOP
+function openLetter() {
+
+    document.getElementById("envelope")
+        .classList.toggle("open");
+
+    document.getElementById("letter")
+        .classList.toggle("show");
+
+}
+
+// PESAN RAHASIA
+function secretMessage() {
+
+    document.getElementById("secret").innerHTML =
+        "You are my favorite notification, my favorite person, and my favorite part of life. I love you forever! ❤️";
+
+}
+
+// ANIMASI HATI
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "floating";
+
+    heart.innerHTML = ["💗", "💕", "💖", "🌸"][
+        Math.floor(Math.random() * 4)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 7000);
+
+}
+
+setInterval(createHeart, 800);
+
+</script>
 
 </body>
 </html>
