@@ -11,8 +11,8 @@
   body {
     min-height: 100vh;
     font-family: 'Nunito', sans-serif;
-    color: #5a3347;
-    background: linear-gradient(160deg, #fff0f6, #ffd9e8 55%, #ffc4dc);
+    color: #2d4a6b;
+    background: linear-gradient(160deg, #f0f8ff, #d9ecff 55%, #c4e0ff);
     overflow-x: hidden;
     text-align: center;
   }
@@ -20,8 +20,8 @@
   .layar.aktif { display: block; animation: muncul .6s ease; }
   @keyframes muncul { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 
-  h1 { font-family: 'Dancing Script', cursive; font-weight: 600; color: #ff5c93; font-size: 2.8rem; line-height: 1.2; margin: 12px 0; }
-  h2 { font-family: 'Dancing Script', cursive; font-weight: 600; color: #ff5c93; font-size: 2.1rem; line-height: 1.25; margin-bottom: 20px; }
+  h1 { font-family: 'Dancing Script', cursive; font-weight: 600; color: #3b8eea; font-size: 2.8rem; line-height: 1.2; margin: 12px 0; }
+  h2 { font-family: 'Dancing Script', cursive; font-weight: 600; color: #3b8eea; font-size: 2.1rem; line-height: 1.25; margin-bottom: 20px; }
   .besar { font-size: 5.5rem; animation: lompat 1.6s infinite; display: inline-block; }
   @keyframes lompat { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-16px) rotate(4deg); } }
   p.kecil { font-size: 1.05rem; margin-bottom: 26px; opacity: .85; }
@@ -29,29 +29,29 @@
   button {
     font-family: inherit; font-weight: 700; font-size: 1.05rem;
     padding: 14px 28px; margin: 6px; border: none; border-radius: 999px;
-    background: #ff5c93; color: #fff; cursor: pointer;
-    box-shadow: 0 6px 0 #d63d72, 0 10px 20px rgba(255,92,147,.35);
+    background: #3b8eea; color: #fff; cursor: pointer;
+    box-shadow: 0 6px 0 #2a6fc4, 0 10px 20px rgba(59,142,234,.35);
     transition: transform .1s, box-shadow .1s;
   }
-  button:active { transform: translateY(4px); box-shadow: 0 2px 0 #d63d72; }
-  button.abu { background: #b9a3ad; box-shadow: 0 6px 0 #9a8690; }
+  button:active { transform: translateY(4px); box-shadow: 0 2px 0 #2a6fc4; }
+  button.abu { background: #a3b3c2; box-shadow: 0 6px 0 #8596a6; }
 
   .kartu {
-    background: #fff9fb; border-radius: 22px; padding: 26px 22px; margin: 26px 0 10px;
+    background: #f9fcff; border-radius: 22px; padding: 26px 22px; margin: 26px 0 10px;
     text-align: left; line-height: 1.9; white-space: pre-line; font-size: 1.02rem;
-    box-shadow: 0 10px 30px rgba(120,40,70,.15); border: 3px dashed #ffb3cf;
+    box-shadow: 0 10px 30px rgba(30,70,120,.15); border: 3px dashed #a9d0ff;
     min-height: 120px;
   }
-  .ttd { font-family: 'Dancing Script', cursive; font-weight: 600; color: #ff5c93; margin-top: 18px; font-size: 1.6rem; opacity: 0; transition: opacity 1s; }
+  .ttd { font-family: 'Dancing Script', cursive; font-weight: 600; color: #3b8eea; margin-top: 18px; font-size: 1.6rem; opacity: 0; transition: opacity 1s; }
   .ttd.tampil { opacity: 1; }
 
   #btnLanjut { display: none; margin-top: 24px; }
   #btnLanjut.tampil { display: inline-block; animation: muncul .8s ease; }
-  .judulFoto { font-family: 'Dancing Script', cursive; font-weight: 600; color: #ff5c93; font-size: 1.9rem; margin-bottom: 6px; }
+  .judulFoto { font-family: 'Dancing Script', cursive; font-weight: 600; color: #3b8eea; font-size: 1.9rem; margin-bottom: 6px; }
 
   .polaroid {
     background: #fff; padding: 12px 12px 10px; border-radius: 6px;
-    box-shadow: 0 10px 25px rgba(120,40,70,.25);
+    box-shadow: 0 10px 25px rgba(30,70,120,.25);
     width: 78%; max-width: 300px; margin: 22px auto;
     opacity: 0; transform: translateY(30px) scale(.9);
     transition: opacity .8s ease, transform .8s ease;
@@ -60,7 +60,7 @@
   .polaroid:nth-child(odd).tampil  { transform: rotate(-3deg); }
   .polaroid:nth-child(even).tampil { transform: rotate(3deg); }
   .polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: 3px; }
-  .polaroid span { display: block; margin-top: 10px; font-family: 'Dancing Script', cursive; font-weight: 600; font-size: 1.25rem; color: #ff5c93; }
+  .polaroid span { display: block; margin-top: 10px; font-family: 'Dancing Script', cursive; font-weight: 600; font-size: 1.25rem; color: #3b8eea; }
 
   .melayang { position: fixed; bottom: -40px; pointer-events: none; z-index: 0; animation: naik linear forwards; }
   @keyframes naik { to { transform: translateY(-115vh) rotate(25deg); opacity: .3; } }
@@ -98,7 +98,7 @@
 <div class="layar" id="l4">
   <p class="judulFoto" id="judulFoto"></p>
   <div id="foto"></div>
-  <button onclick="hujan()">Hujan hati lagi 💗</button>
+  <button onclick="hujan()">Hujan hati lagi 💙</button>
 </div>
 
 <script>
@@ -126,7 +126,7 @@ const MUSIK = "";
 // Hapus baris yang tidak dipakai, atau tambah baris baru (jangan lupa koma di ujung, kecuali baris terakhir).
 const FOTO = [
   { file: "foto1.jpg", caption: "Gantengnya pacarkuuu 🥰" },
-  { file: "foto2.jpg", caption: "Favoritku sedunia 💕" },
+  { file: "foto2.jpg", caption: "Favoritku sedunia 💙" },
   { file: "foto3.jpg", caption: "Gemes bgt 🧸" }
 ];
 
@@ -158,7 +158,7 @@ document.getElementById('judul').textContent = `Happy Birthday, ${NAMA}!`;
 document.getElementById('pembuka').textContent = PEMBUKA;
 document.getElementById('tanya').textContent = PERTANYAAN;
 document.getElementById('judulFoto').textContent = JUDUL_FOTO;
-document.getElementById('ttd').textContent = `— dari ${DARI} 💕`;
+document.getElementById('ttd').textContent = `— dari ${DARI} 💙`;
 document.title = `Happy Birthday, ${NAMA}! 🎂`;
 
 // lagu latar
@@ -226,7 +226,7 @@ function tampilkanFoto() {
 
 // hujan emoji
 function hujan() {
-  const ikon = ["💗","💖","💕","🎈","✨","🌸","🧸","🎀"];
+  const ikon = ["💙","🦋","💎","🎈","✨","💫","🧸","🌊"];
   for (let i = 0; i < 40; i++) {
     setTimeout(() => {
       const e = document.createElement('div');
@@ -246,7 +246,7 @@ const ledekan = [
   "Eits, nggak bisa kepencet 😝",
   "Coba lagi deh 🙈",
   "Masa lupa sih? 🥺",
-  "Udah, pencet yang pink aja 💗"
+  "Udah, pencet yang biru aja 💙"
 ];
 let kali = 0;
 const nggak = document.getElementById('nggak');
@@ -261,11 +261,11 @@ nggak.addEventListener('mouseover', kabur);
 nggak.addEventListener('touchstart', kabur);
 nggak.addEventListener('click', kabur);
 
-// hati melayang pelan di latar
+// hati biru melayang pelan di latar
 setInterval(() => {
   const h = document.createElement('div');
   h.className = 'melayang';
-  h.textContent = ["💗","💕","🌸"][Math.floor(Math.random() * 3)];
+  h.textContent = ["💙","🦋","💎"][Math.floor(Math.random() * 3)];
   h.style.left = Math.random() * 100 + 'vw';
   h.style.fontSize = (14 + Math.random() * 14) + 'px';
   h.style.animationDuration = (8 + Math.random() * 6) + 's';
