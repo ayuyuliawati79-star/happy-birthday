@@ -1,77 +1,201 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Selamat Ulang Tahun! 🎂</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday! 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      font-family: Georgia, serif;
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(160deg, #fff0f5, #ffc2d8);
-      color: #4a2a38;
-      line-height: 1.8;
-    }
-    h1 { color: #ff6b9d; font-size: 2rem; }
-    .kue { font-size: 4rem; }
-    img {
-      width: 80%;
-      max-width: 400px;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0,0,0,.2);
-      margin: 20px 0;
-    }
-    button {
-      padding: 14px 28px;
-      border: none;
-      border-radius: 999px;
-      background: #ff6b9d;
-      color: white;
-      font-size: 1.05rem;
-      cursor: pointer;
-      box-shadow: 0 6px 18px rgba(255,107,157,.45);
-    }
-    #pesan {
-      display: none;
-      max-width: 500px;
-      margin: 24px auto 0;
-      padding: 24px;
-      background: #fff5f8;
-      border-radius: 20px;
-      text-align: left;
-      box-shadow: 0 10px 30px rgba(120,40,70,.15);
-    }
-  </style>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    color: #5a3347;
+    background: linear-gradient(160deg, #fff0f6, #ffd9e8 55%, #ffc4dc);
+    overflow-x: hidden;
+    text-align: center;
+  }
+  .layar { display: none; padding: 40px 20px 60px; max-width: 520px; margin: 0 auto; }
+  .layar.aktif { display: block; animation: muncul .6s ease; }
+  @keyframes muncul { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+  h1 { font-family: 'Pacifico', cursive; color: #ff5c93; font-size: 2.3rem; line-height: 1.3; margin: 12px 0; }
+  h2 { font-family: 'Pacifico', cursive; color: #ff5c93; font-size: 1.6rem; margin-bottom: 20px; }
+  .besar { font-size: 5.5rem; animation: lompat 1.6s infinite; display: inline-block; }
+  @keyframes lompat { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-16px) rotate(4deg); } }
+  p.kecil { font-size: 1.05rem; margin-bottom: 26px; opacity: .85; }
+
+  button {
+    font-family: inherit; font-weight: 700; font-size: 1.05rem;
+    padding: 14px 28px; margin: 6px; border: none; border-radius: 999px;
+    background: #ff5c93; color: #fff; cursor: pointer;
+    box-shadow: 0 6px 0 #d63d72, 0 10px 20px rgba(255,92,147,.35);
+    transition: transform .1s, box-shadow .1s;
+  }
+  button:active { transform: translateY(4px); box-shadow: 0 2px 0 #d63d72; }
+  button.abu { background: #b9a3ad; box-shadow: 0 6px 0 #9a8690; }
+
+  .polaroid {
+    background: #fff; padding: 12px 12px 10px; border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(120,40,70,.25);
+    width: 78%; max-width: 300px; margin: 22px auto;
+  }
+  .polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: 3px; }
+  .polaroid span { display: block; margin-top: 10px; font-family: 'Pacifico', cursive; font-size: .95rem; color: #ff5c93; }
+  .polaroid:nth-child(odd)  { transform: rotate(-3deg); }
+  .polaroid:nth-child(even) { transform: rotate(3deg); }
+
+  .kartu {
+    background: #fff9fb; border-radius: 22px; padding: 26px 22px; margin: 26px 0 10px;
+    text-align: left; line-height: 1.9; white-space: pre-line;
+    box-shadow: 0 10px 30px rgba(120,40,70,.15); border: 3px dashed #ffb3cf;
+    min-height: 120px;
+  }
+  .ttd { font-family: 'Pacifico', cursive; color: #ff5c93; margin-top: 18px; font-size: 1.2rem; }
+
+  .melayang { position: fixed; bottom: -40px; pointer-events: none; z-index: 0; animation: naik linear forwards; }
+  @keyframes naik { to { transform: translateY(-115vh) rotate(25deg); opacity: .3; } }
+  .layar { position: relative; z-index: 1; }
+</style>
 </head>
 
 <body>
-  <div class="kue">🎂</div>
 
-  <!-- GANTI nama di bawah ini -->
-  <h1>Happy Birthday, Sayang!</h1>
-  <p>Ada sesuatu kecil buat kamu hari ini...</p>
+<!-- LAYAR 1: pembuka -->
+<div class="layar aktif" id="l1">
+  <div class="besar">🎂</div>
+  <h1 id="judul"></h1>
+  <p class="kecil">Ada kejutan kecil buat kamu, jangan dilewatin ya 🥺</p>
+  <button onclick="ke('l2')">Klik aku dong 💌</button>
+</div>
 
-  <!-- GANTI foto1.jpg dengan nama fotomu (hapus baris ini kalau belum ada foto) -->
-  <img src="foto1.jpg" alt="Foto kita">
+<!-- LAYAR 2: pertanyaan lucu -->
+<div class="layar" id="l2">
+  <div class="besar">🧸</div>
+  <h2>Kamu tau gak hari ini hari apa?</h2>
+  <button onclick="ke('l3'); hujan();">Tau dong! 🎉</button>
+  <button class="abu" id="nggak">Nggak tau</button>
+  <p class="kecil" id="ledek" style="margin-top:22px"></p>
+</div>
 
-  <br>
-  <button onclick="buka()">Buka hadiahnya 🎁</button>
+<!-- LAYAR 3: ucapan + foto -->
+<div class="layar" id="l3">
+  <h1>Selamat Ulang Tahun! 🥳</h1>
+  <div id="foto"></div>
+  <div class="kartu" id="pesan"></div>
+  <p class="ttd" id="ttd"></p>
+  <button onclick="hujan()" style="margin-top:24px">Hujan hati lagi 💗</button>
+</div>
 
-  <!-- GANTI isi pesan sesuai ucapanmu -->
-  <div id="pesan">
-    <p>Selamat ulang tahun, sayang! 🎉</p>
-    <p>Terima kasih sudah selalu ada buat aku. Aku bersyukur banget bisa kenal kamu.</p>
-    <p>Semoga semua doa dan impianmu terwujud, dan kamu selalu sehat dan bahagia.</p>
-    <p>I love you, lebih dari kemarin. ❤️</p>
-    <p style="text-align:right; color:#ff6b9d;"><i>— dari aku 💕</i></p>
-  </div>
+<script>
+/* ================= EDIT BAGIAN INI ================= */
+const NAMA  = "Sayang";   // nama pacarmu
+const DARI  = "Aku";      // namamu
 
-  <script>
-    function buka() {
-      document.getElementById('pesan').style.display = 'block';
-    }
-  </script>
+// Foto: tulis nama file yang kamu upload ke GitHub + caption lucunya.
+// Hapus baris yang tidak dipakai. Kosongkan [] kalau tidak ada foto.
+const FOTO = [
+  { file: "foto1.jpg", caption: "Cantik banget sih 🥰" },
+  { file: "foto2.jpg", caption: "Favoritku sedunia 💕" },
+  { file: "foto3.jpg", caption: "Gemes bgt 🧸" }
+];
+
+const PESAN =
+`Selamat ulang tahun, ${NAMA}! 🎂
+
+Makasih ya udah jadi orang yang paling bikin aku senyum-senyum sendiri.
+Kamu itu lucu, baik, dan kadang ngegemesin banget. 🥺
+
+Semoga hari ini penuh kue, tawa, dan hal-hal yang bikin kamu bahagia.
+Semoga semua mimpimu pelan-pelan jadi nyata,
+dan semoga aku boleh terus ada di sampingmu. 💖
+
+I love you, lebih dari kemarin, kurang dari besok! ❤️`;
+/* =================================================== */
+
+document.getElementById('judul').textContent = `Happy Birthday, ${NAMA}!`;
+document.getElementById('ttd').textContent = `— dari ${DARI} 💕`;
+document.title = `Happy Birthday, ${NAMA}! 🎂`;
+
+// pasang foto polaroid (kalau file tidak ada, otomatis disembunyikan)
+FOTO.forEach(f => {
+  const d = document.createElement('div');
+  d.className = 'polaroid';
+  d.innerHTML = `<img src="${f.file}" alt=""><span>${f.caption}</span>`;
+  d.querySelector('img').onerror = () => d.remove();
+  document.getElementById('foto').appendChild(d);
+});
+
+// pindah layar
+function ke(id) {
+  document.querySelectorAll('.layar').forEach(l => l.classList.remove('aktif'));
+  document.getElementById(id).classList.add('aktif');
+  window.scrollTo(0, 0);
+  if (id === 'l3') ketik();
+}
+
+// efek mengetik
+let timer;
+function ketik() {
+  const el = document.getElementById('pesan');
+  clearInterval(timer);
+  el.textContent = ""; let i = 0;
+  timer = setInterval(() => {
+    el.textContent += PESAN[i++];
+    if (i >= PESAN.length) clearInterval(timer);
+  }, 40);
+}
+
+// hujan emoji
+function hujan() {
+  const ikon = ["💗","💖","💕","🎈","✨","🌸","🧸","🎀"];
+  for (let i = 0; i < 40; i++) {
+    setTimeout(() => {
+      const e = document.createElement('div');
+      e.className = 'melayang';
+      e.textContent = ikon[Math.floor(Math.random() * ikon.length)];
+      e.style.left = Math.random() * 100 + 'vw';
+      e.style.fontSize = (18 + Math.random() * 24) + 'px';
+      e.style.animationDuration = (4 + Math.random() * 4) + 's';
+      document.body.appendChild(e);
+      setTimeout(() => e.remove(), 8500);
+    }, i * 110);
+  }
+}
+
+// tombol "Nggak tau" yang kabur-kaburan
+const ledekan = [
+  "Eits, nggak bisa kepencet 😝",
+  "Coba lagi deh 🙈",
+  "Masa lupa sih? 🥺",
+  "Udah, pencet yang pink aja 💗"
+];
+let kali = 0;
+const nggak = document.getElementById('nggak');
+function kabur(e) {
+  if (e) e.preventDefault();
+  nggak.style.position = 'fixed';
+  nggak.style.left = Math.random() * (innerWidth - nggak.offsetWidth - 20) + 10 + 'px';
+  nggak.style.top  = Math.random() * (innerHeight - nggak.offsetHeight - 20) + 10 + 'px';
+  document.getElementById('ledek').textContent = ledekan[kali++ % ledekan.length];
+}
+nggak.addEventListener('mouseover', kabur);
+nggak.addEventListener('touchstart', kabur);
+nggak.addEventListener('click', kabur);
+
+// hati melayang pelan di latar
+setInterval(() => {
+  const h = document.createElement('div');
+  h.className = 'melayang';
+  h.textContent = ["💗","💕","🌸"][Math.floor(Math.random() * 3)];
+  h.style.left = Math.random() * 100 + 'vw';
+  h.style.fontSize = (14 + Math.random() * 14) + 'px';
+  h.style.animationDuration = (8 + Math.random() * 6) + 's';
+  h.style.opacity = .6;
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 15000);
+}, 1200);
+</script>
 </body>
 </html>
