@@ -38,7 +38,7 @@
 
   .kartu {
     background: #fff9fb; border-radius: 22px; padding: 26px 22px; margin: 26px 0 10px;
-    text-align: left; line-height: 1.9; white-space: pre-line;
+    text-align: left; line-height: 1.9; white-space: pre-line; font-size: 1.02rem;
     box-shadow: 0 10px 30px rgba(120,40,70,.15); border: 3px dashed #ffb3cf;
     min-height: 120px;
   }
@@ -88,8 +88,8 @@
 
 <!-- LAYAR 3: kata-kata -->
 <div class="layar" id="l3">
-  <h1>Happy Birthday! 🥳</h1>
-  <div class="kartu" id="pesan"></div>
+  <h1>Selamat Ulang Tahun! 🥳</h1>
+  <div class="kartu" id="pesan" onclick="akhiriKetik()"></div>
   <p class="ttd" id="ttd"></p>
   <button id="btnLanjut" onclick="ke('l4')">Lanjut, ada foto buat kamu 📸</button>
 </div>
@@ -108,11 +108,15 @@
    ===================================================== */
 
 const NAMA  = "Sayang";    // nama atau panggilan pacarmu
-const DARI  = "si imup";       // namamu
+const DARI  = "Aku";       // namamu
 
-const PEMBUKA   = "Ada kejutan kecil buat kamu, jangan dilewatin ya 🥺";  // tulisan di halaman pertama
-const PERTANYAAN = "Kamu tau gak hari ini hari apa?";                      // pertanyaan di halaman kedua
-const JUDUL_FOTO = "Beberapa momen favoritku 📸";                          // judul di halaman foto
+const PEMBUKA    = "Ada kejutan kecil buat kamu, jangan dilewatin ya 🥺";  // tulisan di halaman pertama
+const PERTANYAAN = "Kamu tau gak hari ini hari apa?";                       // pertanyaan di halaman kedua
+const JUDUL_FOTO = "Beberapa momen favoritku 📸";                           // judul di halaman foto
+
+// Kecepatan mengetik dalam milidetik per huruf. Makin kecil makin cepat.
+// 20 kira-kira 40 detik untuk pesan panjang. Dia juga bisa sentuh kotak pesan untuk langsung menampilkan semuanya.
+const KECEPATAN = 20;
 
 // Lagu latar (opsional). Upload file mp3 ke GitHub lalu tulis namanya di sini.
 // Contoh: "aboutyou.mp3". Kosongkan "" kalau tidak mau pakai lagu.
@@ -121,7 +125,7 @@ const MUSIK = "";
 // Foto: nama file harus SAMA PERSIS dengan yang di-upload ke GitHub.
 // Hapus baris yang tidak dipakai, atau tambah baris baru (jangan lupa koma di ujung, kecuali baris terakhir).
 const FOTO = [
-  { file: "foto1.jpg", caption: "Ganteng banget sih 🥰" },
+  { file: "foto1.jpg", caption: "Gantengnya pacarkuuu 🥰" },
   { file: "foto2.jpg", caption: "Favoritku sedunia 💕" },
   { file: "foto3.jpg", caption: "Gemes bgt 🧸" }
 ];
@@ -129,26 +133,33 @@ const FOTO = [
 // Ucapanmu. Tulis di antara tanda ` ` (backtick). Jangan hapus tanda itu.
 // ${NAMA} akan otomatis berubah jadi nama di atas.
 const PESAN =
-`Happy Birthday , ${Sayang}! 🎂
+`Selamat ulang tahun, ${NAMA} 🤍
 
-Makasih ya udah jadi orang yang paling bikin aku senyum-senyum sendiri.
-Kamu itu lucu, baik, dan kadang ngegemesin banget. 🥺
+Hari ini hari spesial buat kamu, jadi aku mau nulis sesuatu yang agak panjang. Bukan karena aku lagi mau puitis, tapi karena kalau cuma tulis “happy birthday”, rasanya nggak cukup buat nyampein semua yang ada di hati aku.
 
-Semoga hari ini penuh kue, tawa, dan hal-hal yang bikin kamu bahagia.
-Semoga semua mimpimu pelan-pelan jadi nyata,
-dan semoga aku boleh terus ada di sampingmu. 💖
+Terima kasih ya, sudah lahir ke dunia ini. Karena kalau kamu nggak ada, aku nggak tahu hidup aku bakal seperti apa. Mungkin tetap jalan, tapi pasti nggak sehangat dan senyaman sekarang. Kamu itu salah satu hal terbaik yang pernah terjadi di hidup aku.
 
-I love you, lebih dari kemarin, kurang dari besok! ❤️`;
+Aku sering memperhatikan hal-hal kecil dari kamu. Cara kamu ketawa waktu hal receh terasa lucu banget. Cara kamu diam-diam peduli walaupun nggak selalu bilang. Cara kamu bikin aku merasa aman, bahkan di hari-hari yang berat. Kamu mungkin nggak sadar, tapi hal-hal kecil itu yang bikin aku jatuh cinta berkali-kali.
+
+Terima kasih sudah sabar menghadapi aku. Aku tahu aku nggak selalu mudah: kadang overthinking, kadang ngambek, kadang minta dimengerti padahal nggak ngomong apa-apa. Tapi kamu tetap bertahan, tetap dengerin, tetap milih aku. Itu hal yang nggak akan pernah aku anggap biasa.
+
+Di umur yang baru ini, aku berdoa semoga kamu selalu sehat, rezekinya lancar, dan semua usaha kamu dibalas dengan hasil yang lebih baik dari yang kamu bayangkan. Semoga cita-cita kamu satu per satu terwujud, semoga hari-hari kamu lebih banyak tawa daripada lelah, dan semoga kamu selalu dikelilingi orang-orang yang tulus sayang sama kamu.
+
+Kalau suatu hari kamu capek, ingat ya, kamu nggak sendirian. Ada aku yang siap jadi tempat pulang, tempat cerita, dan tempat istirahat. Kamu nggak harus selalu kuat di depan aku.
+
+Aku nggak janji bisa jadi pasangan yang sempurna, tapi aku janji akan terus berusaha jadi yang terbaik buat kamu. Aku mau terus nemenin kamu, di masa senang, masa susah, dan semua yang ada di antaranya.
+
+Sekali lagi, selamat ulang tahun, sayang. Semoga tahun ini jadi tahun yang baik buat kamu, buat kita. Aku sayang kamu, hari ini, besok, dan seterusnya.`;
 
 /* ================= BATAS EDIT ================= */
 
 
-document.getElementById('judul').textContent = `Happy Birthday, ${Sayang}!`;
+document.getElementById('judul').textContent = `Happy Birthday, ${NAMA}!`;
 document.getElementById('pembuka').textContent = PEMBUKA;
 document.getElementById('tanya').textContent = PERTANYAAN;
 document.getElementById('judulFoto').textContent = JUDUL_FOTO;
-document.getElementById('ttd').textContent = `— dari ${imup} 💕`;
-document.title = `Happy Birthday, ${Sayang}! 🎂`;
+document.getElementById('ttd').textContent = `— dari ${DARI} 💕`;
+document.title = `Happy Birthday, ${NAMA}! 🎂`;
 
 // lagu latar
 let lagu = null;
@@ -182,18 +193,26 @@ function ke(id) {
 
 // efek mengetik, setelah selesai muncul tombol lanjut ke slide foto
 let timer;
+let selesai = false;
 function ketik() {
   const el = document.getElementById('pesan');
   clearInterval(timer);
-  el.textContent = ""; let i = 0;
+  el.textContent = "";
+  selesai = false;
+  let i = 0;
   timer = setInterval(() => {
     el.textContent += PESAN[i++];
-    if (i >= PESAN.length) {
-      clearInterval(timer);
-      document.getElementById('ttd').classList.add('tampil');
-      setTimeout(() => document.getElementById('btnLanjut').classList.add('tampil'), 1200);
-    }
-  }, 40);
+    if (i >= PESAN.length) akhiriKetik();
+  }, KECEPATAN);
+}
+
+function akhiriKetik() {
+  if (selesai) return;
+  selesai = true;
+  clearInterval(timer);
+  document.getElementById('pesan').textContent = PESAN;
+  document.getElementById('ttd').classList.add('tampil');
+  setTimeout(() => document.getElementById('btnLanjut').classList.add('tampil'), 800);
 }
 
 function tampilkanFoto() {
