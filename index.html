@@ -1,278 +1,264 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Happy Birthday! 🎂</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love ❤️</title>
 
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    min-height: 100vh;
-    font-family: 'Nunito', sans-serif;
-    color: #2d4a6b;
-    background: linear-gradient(160deg, #f0f8ff, #d9ecff 55%, #c4e0ff);
-    overflow-x: hidden;
-    text-align: center;
-  }
-  .layar { display: none; padding: 40px 20px 60px; max-width: 520px; margin: 0 auto; position: relative; z-index: 1; }
-  .layar.aktif { display: block; animation: muncul .6s ease; }
-  @keyframes muncul { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  h1 { font-family: 'Dancing Script', cursive; font-weight: 600; color: #3b8eea; font-size: 2.8rem; line-height: 1.2; margin: 12px 0; }
-  h2 { font-family: 'Dancing Script', cursive; font-weight: 600; color: #3b8eea; font-size: 2.1rem; line-height: 1.25; margin-bottom: 20px; }
-  .besar { font-size: 5.5rem; animation: lompat 1.6s infinite; display: inline-block; }
-  @keyframes lompat { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-16px) rotate(4deg); } }
-  p.kecil { font-size: 1.05rem; margin-bottom: 26px; opacity: .85; }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a0010, #4d1933, #800040);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
 
-  button {
-    font-family: inherit; font-weight: 700; font-size: 1.05rem;
-    padding: 14px 28px; margin: 6px; border: none; border-radius: 999px;
-    background: #3b8eea; color: #fff; cursor: pointer;
-    box-shadow: 0 6px 0 #2a6fc4, 0 10px 20px rgba(59,142,234,.35);
-    transition: transform .1s, box-shadow .1s;
-  }
-  button:active { transform: translateY(4px); box-shadow: 0 2px 0 #2a6fc4; }
-  button.abu { background: #a3b3c2; box-shadow: 0 6px 0 #8596a6; }
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+        }
 
-  .kartu {
-    background: #f9fcff; border-radius: 22px; padding: 26px 22px; margin: 26px 0 10px;
-    text-align: left; line-height: 1.9; white-space: pre-line; font-size: 1.02rem;
-    box-shadow: 0 10px 30px rgba(30,70,120,.15); border: 3px dashed #a9d0ff;
-    min-height: 120px;
-  }
-  .ttd { font-family: 'Dancing Script', cursive; font-weight: 600; color: #3b8eea; margin-top: 18px; font-size: 1.6rem; opacity: 0; transition: opacity 1s; }
-  .ttd.tampil { opacity: 1; }
+        h1 {
+            font-size: 42px;
+            color: #ffb6d5;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px pink;
+        }
 
-  #btnLanjut { display: none; margin-top: 24px; }
-  #btnLanjut.tampil { display: inline-block; animation: muncul .8s ease; }
-  .judulFoto { font-family: 'Dancing Script', cursive; font-weight: 600; color: #3b8eea; font-size: 1.9rem; margin-bottom: 6px; }
+        h2 {
+            color: #ffcce0;
+            margin-bottom: 15px;
+        }
 
-  .polaroid {
-    background: #fff; padding: 12px 12px 10px; border-radius: 6px;
-    box-shadow: 0 10px 25px rgba(30,70,120,.25);
-    width: 78%; max-width: 300px; margin: 22px auto;
-    opacity: 0; transform: translateY(30px) scale(.9);
-    transition: opacity .8s ease, transform .8s ease;
-  }
-  .polaroid.tampil { opacity: 1; }
-  .polaroid:nth-child(odd).tampil  { transform: rotate(-3deg); }
-  .polaroid:nth-child(even).tampil { transform: rotate(3deg); }
-  .polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: 3px; }
-  .polaroid span { display: block; margin-top: 10px; font-family: 'Dancing Script', cursive; font-weight: 600; font-size: 1.25rem; color: #3b8eea; }
+        p {
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 600px;
+        }
 
-  .melayang { position: fixed; bottom: -40px; pointer-events: none; z-index: 0; animation: naik linear forwards; }
-  @keyframes naik { to { transform: translateY(-115vh) rotate(25deg); opacity: .3; } }
-</style>
+        .heart {
+            font-size: 70px;
+            animation: beat 1s infinite;
+            margin: 20px;
+        }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        button {
+            background: #ff80b5;
+            color: white;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff4d94;
+            transform: scale(1.08);
+        }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 650px;
+            margin: 20px auto;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(255,182,213,0.2);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid pink;
+        }
+
+        .floating {
+            position: fixed;
+            bottom: -20px;
+            animation: floatUp 6s linear infinite;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+
+        footer {
+            padding: 25px;
+            color: #ffcce0;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- LAYAR 1: pembuka -->
-<div class="layar aktif" id="l1">
-  <div class="besar">🎂</div>
-  <h1 id="judul"></h1>
-  <p class="kecil" id="pembuka"></p>
-  <button onclick="ke('l2')">Klik aku dong 💌</button>
-</div>
+    <section class="container">
+        <div class="heart">❤️</div>
 
-<!-- LAYAR 2: pertanyaan lucu -->
-<div class="layar" id="l2">
-  <div class="besar">🧸</div>
-  <h2 id="tanya"></h2>
-  <button onclick="ke('l3'); hujan();">Tau dong! 🎉</button>
-  <button class="abu" id="nggak">Nggak tau</button>
-  <p class="kecil" id="ledek" style="margin-top:22px"></p>
-</div>
+        <h1>Happy Birthday!</h1>
 
-<!-- LAYAR 3: kata-kata -->
-<div class="layar" id="l3">
-  <h1>Selamat Ulang Tahun! 🥳</h1>
-  <div class="kartu" id="pesan" onclick="akhiriKetik()"></div>
-  <p class="ttd" id="ttd"></p>
-  <button id="btnLanjut" onclick="ke('l4')">Lanjut, ada foto buat kamu 📸</button>
-</div>
+        <h2>To My Favorite Person</h2>
 
-<!-- LAYAR 4: foto-foto -->
-<div class="layar" id="l4">
-  <p class="judulFoto" id="judulFoto"></p>
-  <div id="foto"></div>
-  <button onclick="hujan()">Hujan hati lagi 💙</button>
-</div>
+        <p>
+            Hari ini adalah hari spesial untuk seseorang
+            yang sangat berarti dalam hidupku.
+        </p>
 
-<script>
-/* =====================================================
-   EDIT BAGIAN INI SAJA. Yang di bawahnya jangan diubah.
-   Ubah tulisan di antara tanda kutip " " atau ` `
-   ===================================================== */
+        <button onclick="showSurprise()">
+            Open Your Surprise 💌
+        </button>
 
-const NAMA  = "Sayang";    // nama atau panggilan pacarmu
-const DARI  = "Aku";       // namamu
+        <div id="surprise" class="hidden card">
+            <h2>Happy Birthday, My Love! 🎂</h2>
 
-const PEMBUKA    = "Ada kejutan kecil buat kamu, jangan dilewatin ya 🥺";  // tulisan di halaman pertama
-const PERTANYAAN = "Kamu tau gak hari ini hari apa?";                       // pertanyaan di halaman kedua
-const JUDUL_FOTO = "Beberapa momen favoritku 📸";                           // judul di halaman foto
+            <p>
+                Selamat ulang tahun, sayangku.
+                Semoga semua hal baik selalu datang
+                dalam hidupmu. Semoga kamu selalu sehat,
+                bahagia, panjang umur, dan semua impianmu
+                bisa tercapai.
+                <br><br>
+                Terima kasih sudah hadir dalam hidupku.
+                Terima kasih sudah menjadi bagian dari
+                hari-hariku.
+                <br><br>
+                Aku mungkin tidak bisa memberikan
+                segalanya, tetapi aku akan selalu berusaha
+                memberikan kasih sayang terbaik untukmu.
+                <br><br>
+                I love you, always and forever. ❤️
+            </p>
+        </div>
+    </section>
 
-// Kecepatan mengetik dalam milidetik per huruf. Makin kecil makin cepat.
-// 20 kira-kira 40 detik untuk pesan panjang. Dia juga bisa sentuh kotak pesan untuk langsung menampilkan semuanya.
-const KECEPATAN = 20;
+    <section class="container">
+        <h1>Reasons Why I Love You ❤️</h1>
 
-// Lagu latar (opsional). Upload file mp3 ke GitHub lalu tulis namanya di sini.
-// Contoh: "aboutyou.mp3". Kosongkan "" kalau tidak mau pakai lagu.
-const MUSIK = "";
+        <div class="card">
+            <p>
+                💗 Karena kamu selalu menjadi dirimu sendiri.
+                <br>
+                💗 Karena senyummu bisa membuat hariku lebih baik.
+                <br>
+                💗 Karena kamu membuatku merasa dicintai.
+                <br>
+                💗 Karena bersamamu, hal sederhana terasa istimewa.
+                <br>
+                💗 Karena kamu adalah seseorang yang ingin terus aku perjuangkan.
+            </p>
+        </div>
+    </section>
 
-// Foto: nama file harus SAMA PERSIS dengan yang di-upload ke GitHub.
-// Hapus baris yang tidak dipakai, atau tambah baris baru (jangan lupa koma di ujung, kecuali baris terakhir).
-const FOTO = [
-  { file: "foto1.jpg", caption: "Gantengnya pacarkuuu 🥰" },
-  { file: "foto2.jpg", caption: "Favoritku sedunia 💙" },
-  { file: "foto3.jpg", caption: "Gemes bgt 🧸" }
-];
+    <section class="container">
+        <h1>Our Memories 📸</h1>
 
-// Ucapanmu. Tulis di antara tanda ` ` (backtick). Jangan hapus tanda itu.
-// ${NAMA} akan otomatis berubah jadi nama di atas.
-const PESAN =
-`Selamat ulang tahun, ${NAMA} 🤍
+        <p>
+            Beberapa kenangan yang ingin selalu aku ingat.
+        </p>
 
-Hari ini hari spesial buat kamu, jadi aku mau nulis sesuatu yang agak panjang. Bukan karena aku lagi mau puitis, tapi karena kalau cuma tulis “happy birthday”, rasanya nggak cukup buat nyampein semua yang ada di hati aku.
+        <div class="gallery">
+            <img src="foto1.jpg" alt="Kenangan 1">
+            <img src="foto2.jpg" alt="Kenangan 2">
+            <img src="foto3.jpg" alt="Kenangan 3">
+        </div>
 
-Terima kasih ya, sudah lahir ke dunia ini. Karena kalau kamu nggak ada, aku nggak tahu hidup aku bakal seperti apa. Mungkin tetap jalan, tapi pasti nggak sehangat dan senyaman sekarang. Kamu itu salah satu hal terbaik yang pernah terjadi di hidup aku.
+        <p style="margin-top:20px;">
+            Every moment with you is my favorite memory. ❤️
+        </p>
+    </section>
 
-Aku sering memperhatikan hal-hal kecil dari kamu. Cara kamu ketawa waktu hal receh terasa lucu banget. Cara kamu diam-diam peduli walaupun nggak selalu bilang. Cara kamu bikin aku merasa aman, bahkan di hari-hari yang berat. Kamu mungkin nggak sadar, tapi hal-hal kecil itu yang bikin aku jatuh cinta berkali-kali.
+    <section class="container">
+        <div class="card">
+            <div class="heart">🎂</div>
 
-Terima kasih sudah sabar menghadapi aku. Aku tahu aku nggak selalu mudah: kadang overthinking, kadang ngambek, kadang minta dimengerti padahal nggak ngomong apa-apa. Tapi kamu tetap bertahan, tetap dengerin, tetap milih aku. Itu hal yang nggak akan pernah aku anggap biasa.
+            <h1>Once Again, Happy Birthday!</h1>
 
-Di umur yang baru ini, aku berdoa semoga kamu selalu sehat, rezekinya lancar, dan semua usaha kamu dibalas dengan hasil yang lebih baik dari yang kamu bayangkan. Semoga cita-cita kamu satu per satu terwujud, semoga hari-hari kamu lebih banyak tawa daripada lelah, dan semoga kamu selalu dikelilingi orang-orang yang tulus sayang sama kamu.
+            <p>
+                Semoga tahun ini menjadi tahun terbaikmu.
+                Jangan pernah berhenti bermimpi dan
+                jangan pernah merasa sendirian.
+                <br><br>
+                I'll always be cheering for you.
+                <br><br>
+                With love,
+                <br>
+                Your Favorite Girl ❤️
+            </p>
+        </div>
+    </section>
 
-Kalau suatu hari kamu capek, ingat ya, kamu nggak sendirian. Ada aku yang siap jadi tempat pulang, tempat cerita, dan tempat istirahat. Kamu nggak harus selalu kuat di depan aku.
+    <footer>
+        Made with love, just for you ❤️
+    </footer>
 
-Aku nggak janji bisa jadi pasangan yang sempurna, tapi aku janji akan terus berusaha jadi yang terbaik buat kamu. Aku mau terus nemenin kamu, di masa senang, masa susah, dan semua yang ada di antaranya.
+    <script>
+        function showSurprise() {
+            document.getElementById("surprise")
+                .classList.remove("hidden");
+        }
 
-Sekali lagi, selamat ulang tahun, sayang. Semoga tahun ini jadi tahun yang baik buat kamu, buat kita. Aku sayang kamu, hari ini, besok, dan seterusnya.`;
+        function createHeart() {
+            const heart = document.createElement("div");
 
-/* ================= BATAS EDIT ================= */
+            heart.className = "floating";
+            heart.innerHTML = "❤️";
 
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize =
+                (Math.random() * 20 + 15) + "px";
 
-document.getElementById('judul').textContent = `Happy Birthday, ${NAMA}!`;
-document.getElementById('pembuka').textContent = PEMBUKA;
-document.getElementById('tanya').textContent = PERTANYAAN;
-document.getElementById('judulFoto').textContent = JUDUL_FOTO;
-document.getElementById('ttd').textContent = `— dari ${DARI} 💙`;
-document.title = `Happy Birthday, ${NAMA}! 🎂`;
+            document.body.appendChild(heart);
 
-// lagu latar
-let lagu = null;
-if (MUSIK) {
-  lagu = new Audio(MUSIK);
-  lagu.loop = true;
-  lagu.volume = 0.6;
-}
-function mulaiLagu() {
-  if (lagu) lagu.play().catch(() => {});
-}
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
 
-// pasang foto polaroid (kalau file tidak ada, otomatis disembunyikan)
-FOTO.forEach(f => {
-  const d = document.createElement('div');
-  d.className = 'polaroid';
-  d.innerHTML = `<img src="${f.file}" alt=""><span>${f.caption}</span>`;
-  d.querySelector('img').onerror = () => d.remove();
-  document.getElementById('foto').appendChild(d);
-});
+        setInterval(createHeart, 500);
+    </script>
 
-// pindah layar
-function ke(id) {
-  document.querySelectorAll('.layar').forEach(l => l.classList.remove('aktif'));
-  document.getElementById(id).classList.add('aktif');
-  window.scrollTo(0, 0);
-  if (id === 'l2') mulaiLagu();
-  if (id === 'l3') ketik();
-  if (id === 'l4') tampilkanFoto();
-}
-
-// efek mengetik, setelah selesai muncul tombol lanjut ke slide foto
-let timer;
-let selesai = false;
-function ketik() {
-  const el = document.getElementById('pesan');
-  clearInterval(timer);
-  el.textContent = "";
-  selesai = false;
-  let i = 0;
-  timer = setInterval(() => {
-    el.textContent += PESAN[i++];
-    if (i >= PESAN.length) akhiriKetik();
-  }, KECEPATAN);
-}
-
-function akhiriKetik() {
-  if (selesai) return;
-  selesai = true;
-  clearInterval(timer);
-  document.getElementById('pesan').textContent = PESAN;
-  document.getElementById('ttd').classList.add('tampil');
-  setTimeout(() => document.getElementById('btnLanjut').classList.add('tampil'), 800);
-}
-
-function tampilkanFoto() {
-  const fotos = document.querySelectorAll('.polaroid');
-  if (fotos.length === 0) document.getElementById('judulFoto').style.display = 'none';
-  fotos.forEach((p, idx) => {
-    setTimeout(() => p.classList.add('tampil'), 400 + idx * 900);
-  });
-  hujan();
-}
-
-// hujan emoji
-function hujan() {
-  const ikon = ["💙","🦋","💎","🎈","✨","💫","🧸","🌊"];
-  for (let i = 0; i < 40; i++) {
-    setTimeout(() => {
-      const e = document.createElement('div');
-      e.className = 'melayang';
-      e.textContent = ikon[Math.floor(Math.random() * ikon.length)];
-      e.style.left = Math.random() * 100 + 'vw';
-      e.style.fontSize = (18 + Math.random() * 24) + 'px';
-      e.style.animationDuration = (4 + Math.random() * 4) + 's';
-      document.body.appendChild(e);
-      setTimeout(() => e.remove(), 8500);
-    }, i * 110);
-  }
-}
-
-// tombol "Nggak tau" yang kabur-kaburan
-const ledekan = [
-  "Eits, nggak bisa kepencet 😝",
-  "Coba lagi deh 🙈",
-  "Masa lupa sih? 🥺",
-  "Udah, pencet yang biru aja 💙"
-];
-let kali = 0;
-const nggak = document.getElementById('nggak');
-function kabur(e) {
-  if (e) e.preventDefault();
-  nggak.style.position = 'fixed';
-  nggak.style.left = Math.random() * (innerWidth - nggak.offsetWidth - 20) + 10 + 'px';
-  nggak.style.top  = Math.random() * (innerHeight - nggak.offsetHeight - 20) + 10 + 'px';
-  document.getElementById('ledek').textContent = ledekan[kali++ % ledekan.length];
-}
-nggak.addEventListener('mouseover', kabur);
-nggak.addEventListener('touchstart', kabur);
-nggak.addEventListener('click', kabur);
-
-// hati biru melayang pelan di latar
-setInterval(() => {
-  const h = document.createElement('div');
-  h.className = 'melayang';
-  h.textContent = ["💙","🦋","💎"][Math.floor(Math.random() * 3)];
-  h.style.left = Math.random() * 100 + 'vw';
-  h.style.fontSize = (14 + Math.random() * 14) + 'px';
-  h.style.animationDuration = (8 + Math.random() * 6) + 's';
-  h.style.opacity = .6;
-  document.body.appendChild(h);
-  setTimeout(() => h.remove(), 15000);
-}, 1200);
-</script>
 </body>
 </html>
