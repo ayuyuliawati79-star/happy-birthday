@@ -15,8 +15,8 @@
 body {
   margin: 0;
   font-family: Poppins, sans-serif;
-  background: linear-gradient(135deg,#ffe4ef,#f4e5ff);
-  color: #75475e;
+  background: linear-gradient(135deg,#e0f0ff,#e5e9ff);
+  color: #47617a;
   overflow-x: hidden;
 }
 
@@ -40,24 +40,24 @@ body {
 }
 
 .card {
-  background: #fffafd;
+  background: #fafdff;
   border: 3px solid white;
   border-radius: 28px;
   padding: 30px;
   max-width: 750px;
   width: 100%;
-  box-shadow: 0 10px 30px #d98baa40;
+  box-shadow: 0 10px 30px #6b9fd640;
 }
 
 h1 {
   font-family: Pacifico, cursive;
-  color: #e77da6;
+  color: #4a90e2;
   font-size: clamp(35px,8vw,60px);
 }
 
 h2 {
   font-family: Pacifico, cursive;
-  color: #e77da6;
+  color: #4a90e2;
   font-size: 30px;
 }
 
@@ -69,7 +69,7 @@ button {
   border: none;
   border-radius: 30px;
   padding: 13px 25px;
-  background: #ed8eb1;
+  background: #5ea3ea;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -77,7 +77,7 @@ button {
 }
 
 button:hover {
-  background: #d86f98;
+  background: #3d85d0;
   transform: scale(1.04);
 }
 
@@ -108,7 +108,7 @@ button:hover {
   background: white;
   padding: 8px;
   border-radius: 12px;
-  box-shadow: 0 5px 15px #d99ab340;
+  box-shadow: 0 5px 15px #8aaed940;
 }
 
 .frame img {
@@ -141,7 +141,7 @@ button:hover {
 
 .final {
   font-family: Pacifico,cursive;
-  color: #e77da6;
+  color: #4a90e2;
   font-size: 25px;
 }
 
@@ -157,7 +157,7 @@ button:hover {
 <!-- SLIDE 1: OPENING -->
 <div class="slide active">
   <div class="card">
-    <div style="font-size:60px">🎀🧸🌷</div>
+    <div style="font-size:60px">🎀🧸🦋</div>
     <h1>Hey, Birthday Boy!</h1>
     <p>A little surprise made with lots of love, just for you.</p>
     <button onclick="nextSlide()">Open Your Gift 💌</button>
@@ -178,7 +178,7 @@ button:hover {
 <!-- SLIDE 3: SURAT -->
 <div class="slide">
   <div class="card">
-    <h2>Dear, My Love 💗</h2>
+    <h2>Dear, My Love 💙</h2>
 
     <div class="letter">
 
@@ -239,22 +239,22 @@ button:hover {
 
     <div class="gallery">
       <div class="frame">
-        <img id="foto1" src="https://placehold.co/300x300/f9d6e5/9c5474?text=Our+Photo">
+        <img id="foto1" src="https://placehold.co/300x300/d6e8f9/54749c?text=Our+Photo">
         <input type="file" accept="image/*" onchange="uploadFoto(event,'foto1')">
       </div>
 
       <div class="frame">
-        <img id="foto2" src="https://placehold.co/300x300/e9dafa/9c5474?text=Sweet+Memory">
+        <img id="foto2" src="https://placehold.co/300x300/dadffa/54749c?text=Sweet+Memory">
         <input type="file" accept="image/*" onchange="uploadFoto(event,'foto2')">
       </div>
 
       <div class="frame">
-        <img id="foto3" src="https://placehold.co/300x300/ffe9c9/9c5474?text=Just+Us">
+        <img id="foto3" src="https://placehold.co/300x300/c9f0ff/54749c?text=Just+Us">
         <input type="file" accept="image/*" onchange="uploadFoto(event,'foto3')">
       </div>
     </div>
 
-    <p>💗 Every picture has a story.</p>
+    <p>💙 Every picture has a story.</p>
     <button onclick="nextSlide()">Next Surprise ♡</button>
   </div>
 </div>
@@ -262,7 +262,7 @@ button:hover {
 <!-- SLIDE 5: ENDING -->
 <div class="slide">
   <div class="card">
-    <div style="font-size:65px">💗🌷💗</div>
+    <div style="font-size:65px">💙🦋💙</div>
 
     <h2>Our Story Continues...</h2>
 
@@ -293,12 +293,6 @@ button:hover {
 </div>
 
 <audio id="music" loop></audio>
-
-<!-- NAVIGASI -->
-<div class="navigation">
-  <button onclick="prevSlide()">❮</button>
-  <button onclick="nextSlide()">❯</button>
-</div>
 
 <script>
 let current = 0;
@@ -340,12 +334,12 @@ function playMusic(event) {
   }
 }
 
-// Animasi hati dan bunga
+// Animasi hati dan hiasan biru
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
 
-  const decorations = ["💗","💕","🌸","🌷","♡","✨"];
+  const decorations = ["💙","💎","🦋","❄️","♡","✨"];
   heart.innerHTML =
     decorations[Math.floor(Math.random()*decorations.length)];
 
